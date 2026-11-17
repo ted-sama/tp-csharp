@@ -1,0 +1,50 @@
+TP Introduction a C# - Reponses
+
+1. Premier projet
+
+1.2 On vise .NET 10 (net10.0). Nullable et ImplicitUsings sont a "enable" tous les deux.
+
+1.4 Le .dll c'est le programme compile en IL, pas en code machine. En Java ca serait le .jar,
+et lancer "dotnet TpCsharp.dll" revient a faire "java -jar".
+
+1.5 Il n'y a pas de .csproj, dotnet se debrouille et genere le projet tout seul en arriere-plan.
+Bien pour tester un truc rapide, mais des qu'on a plusieurs fichiers il faut un vrai projet.
+
+
+2. Types, chaines et null
+
+2.1
+- PointC est une classe, donc c2 = c1 copie juste la reference : on modifie le meme objet,
+  d'ou c1.X = 9. PointS est une struct, s2 est une vraie copie, donc s1.X reste a 1.
+- En Java on aurait false, == compare les references. En C# l'operateur == est surcharge
+  pour les string et compare le texte, donc true.
+- Le m transforme le nombre en decimal. En double, 0.1 + 0.2 donne 0.30000000000000004,
+  en decimal le calcul tombe juste. Des qu'on manipule de l'argent on prend decimal.
+
+2.2
+1. Deux warnings : CS8600 parce qu'on met un possible null dans un string, et CS8602
+   parce qu'on fait .Length sur quelque chose qui peut etre null.
+2. Si on ferme l'entree (Ctrl+D sur Mac, Ctrl+Z sur Windows), il n'y a plus rien a lire
+   et ReadLine() renvoie null.
+5. Le warning devient une erreur et le projet ne compile plus.
+
+
+3. Controle et collections
+
+4. dico["Inconnu"] plante avec une KeyNotFoundException. Avec TryGetValue on recupere
+   juste false si la cle n'existe pas.
+
+
+4. Classe Etudiant
+
+4.1
+- Il faut override. Si on l'oublie, le compilateur met le warning CS0114 (donc erreur
+  chez nous), et Console.WriteLine(ada) afficherait "Ecole.Etudiant".
+- ada._notes ne compile pas : erreur CS0122, le champ est private.
+- Avec une List publique, n'importe qui pourrait faire ada.Notes.Add(45) sans passer par
+  AjouterNote, donc sans la verif entre 0 et 20. On met plutot :
+  public IReadOnlyList<double> Notes => _notes.AsReadOnly();
+
+4.2
+3. Oui ca compile encore. Sans rien, une classe est internal, elle n'est visible que dans
+   le projet. Le souci arrive avec un projet de tests a part : il ne verrait plus Promo.
