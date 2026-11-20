@@ -1,0 +1,15 @@
+nom,prenom,matiere,note,coef
+Lovelace,Ada,Algo,15,3
+Lovelace,Ada,BD,16,2
+Lovelace,Ada,Reseau,14,1
+Turing,Alan,Algo,9,3
+Turing,Alan,BD,12,2
+Turing,Alan,Reseau,11,1
+Hopper,Grace,Algo,18,3
+Hopper,Grace,BD,17,2
+Hopper,Grace,Reseau,12,1
+Torvalds,Linus,Algo,11,3
+Torvalds,Linus,Reseau,16,1
+Liskov,Barbara,BD,13,2
+Liskov,Barbara,Algo,abc,3
+Liskov,Barbara,Reseau,15,1

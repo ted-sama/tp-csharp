@@ -48,3 +48,37 @@ Bien pour tester un truc rapide, mais des qu'on a plusieurs fichiers il faut un 
 4.2
 3. Oui ca compile encore. Sans rien, une classe est internal, elle n'est visible que dans
    le projet. Le souci arrive avec un projet de tests a part : il ne verrait plus Promo.
+
+
+5. Heritage et interfaces
+
+5.1
+4. Si on essaie d'heriter de Carre, erreur CS0509 : on ne peut pas deriver d'un type sealed.
+   (Carre passe aussi son nom "Carré" a Rectangle, sinon il s'afficherait "Rectangle".)
+
+5.2 Oui, Sort() utilise CompareTo donc les formes sortent par aire croissante. Et les cercles
+affichent bien leur rayon : Dessiner() est dans Forme mais c'est le Decrire() de Cercle qui
+est appele.
+
+5.3
+1. Erreur CS0506 : on ne peut pas faire override d'une methode qui n'est pas virtual.
+3. Non. Avec new, c.Decrire() affiche le rayon mais f.Decrire() non, alors que c'est le
+   meme objet.
+   - override : c'est le type reel de l'objet qui decide (Cercle), a l'execution.
+   - new : c'est le type de la variable qui decide (Forme), la methode de Forme est juste
+     cachee, pas remplacee.
+   En Java toutes les methodes sont virtuelles, donc les deux lignes afficheraient le rayon.
+
+
+6. Records et exceptions
+
+1. Deux Note avec les memes valeurs : == donne true, un record compare le contenu. Le
+   ToString est genere tout seul (Note { Nom = Lovelace, ... }) et with fait une copie en
+   changeant juste un champ.
+   Deux Etudiant avec les memes donnees : == donne false. Etudiant est une classe normale,
+   == compare les references, et ce sont deux objets differents.
+
+6. Bonus moyenne ponderee : le calcul irait dans Etudiant, a la place de Moyenne() (somme des
+   note * coef, divisee par la somme des coefs). Pour ca Etudiant doit garder le coef de chaque
+   note, donc stocker une List<Note> (ou des couples note/coef) au lieu de List<double>, et
+   AjouterNote doit prendre le coef en plus.
