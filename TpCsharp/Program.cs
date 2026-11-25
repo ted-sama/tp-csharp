@@ -46,7 +46,7 @@ using Geometrie;
 // 2.2.4 Âge entre 0 et 120 avec TryParse
 // NullControle2.Run();
 
-// 3.1 Mention avec une switch expression
+// 3.1 Tests de Mention avec une switch expression
 // Console.WriteLine(ControleCollections.Mention(18.5));
 // Console.WriteLine(ControleCollections.Mention(15.5));
 // Console.WriteLine(ControleCollections.Mention(13.5));
@@ -96,7 +96,7 @@ using Geometrie;
 // Console.WriteLine(ControleCollections.Decrire(null));
 // Console.WriteLine(ControleCollections.Decrire(3.14));
 
-// 4.1 Tests de la classe Etudiant
+// 4.1 Tests de la classe Etudiant (les lignes // // ne compilent pas)
 // var ada = new Etudiant("Lovelace", "Ada", 4)
 // {
 //     Naissance = new DateOnly(1815, 12, 10)
@@ -109,7 +109,7 @@ using Geometrie;
 // // ada.Naissance = new DateOnly(1816, 1, 1); // error CS8852
 // // Console.WriteLine(ada._notes); // error CS0122
 
-// 4.2 Classe Promo
+// 4.2 Tests de la classe Promo
 // var alan = new Etudiant("Turing", "Alan", 2);
 // alan.AjouterNote(9);
 // alan.AjouterNote(12);

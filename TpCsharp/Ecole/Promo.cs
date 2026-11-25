@@ -1,5 +1,6 @@
 namespace Ecole;
 
+// 4.2 La classe Promo
 public class Promo
 {
     private readonly List<Etudiant> _etudiants = new List<Etudiant>();
@@ -11,6 +12,7 @@ public class Promo
         Nom = nom;
     }
 
+    // 4.2.1 Inscrire, Chercher et Major
     public void Inscrire(Etudiant e)
     {
         _etudiants.Add(e);
@@ -41,6 +43,7 @@ public class Promo
         return major;
     }
 
+    // 4.2.2 Moyenne générale et relevé
     public double MoyenneGenerale()
     {
         if (_etudiants.Count == 0)

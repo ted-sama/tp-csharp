@@ -4,6 +4,7 @@ namespace Ecole;
 
 public static class LecteurNotes
 {
+    // 6.3 Découpe et vérification d'une ligne
     public static Note LireLigne(string ligne, int numero)
     {
         string[] champs = ligne.Split(',');
@@ -29,6 +30,7 @@ public static class LecteurNotes
         return new Note(champs[0], champs[1], champs[2], valeur, coef);
     }
 
+    // 6.4 Lecture du fichier, les lignes invalides sont ignorées
     public static List<Note> Lire(string chemin)
     {
         List<Note> notes = new List<Note>();
@@ -53,6 +55,7 @@ public static class LecteurNotes
                 }
             }
         }
+        // 6.5 Fichier absent
         catch (FileNotFoundException)
         {
             Console.WriteLine($"Le fichier {chemin} est introuvable.");

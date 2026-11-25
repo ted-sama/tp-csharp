@@ -1,3 +1,4 @@
+// 5.1 La classe Promo en LINQ
 public class Promo(string nom, IEnumerable<Note> notes)
 {
     private readonly List<Note> _notes = notes.ToList();
@@ -35,7 +36,7 @@ public class Promo(string nom, IEnumerable<Note> notes)
             .GroupBy(n => n.Matiere)
             .ToDictionary(g => g.Key, g => g.Count(n => n.Valeur >= 10));
 
-    // "1. Grace 16,67 Très bien"
+    // 5.2 "1. Grace 16,67 Très bien"
     public IEnumerable<string> Releve() =>
         Classement().Select((c, i) => $"{i + 1}. {c.Prenom} {c.Moyenne:F2} {Mention(c.Moyenne)}");
 

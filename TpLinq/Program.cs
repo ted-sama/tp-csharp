@@ -424,7 +424,7 @@ List<Note> notes = File.ReadLines("notes.csv")
 // notes4.Add(new Note("Hamilton", "Margaret", "BD", 20, 2));
 // Console.WriteLine(bonnes.Count() + " / " + figees.Count);
 
-// 4.2 à 4.4 Expérience avec un effet de bord dans le Where (retirée après, résultats dans REPONSES.txt)
+// 4.2 à 4.4 Expérience avec un effet de bord dans le Where (retirée après, résultats dans REPONSES.md)
 // // var avecTrace = notes.Where(n =>
 // // {
 // //     Console.WriteLine($"test de {n.Prenom} {n.Matiere}");

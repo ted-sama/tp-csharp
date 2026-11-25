@@ -1,5 +1,6 @@
 class ControleCollections
 {
+    // 3.1 Mention
     public static string Mention(double moyenne)
     {
         return moyenne switch
@@ -13,6 +14,7 @@ class ControleCollections
         };
     }
 
+    // 3.3 Moyenne utilisée pour le dictionnaire
     public static double Moyenne(List<double> notes)
     {
         if (notes.Count == 0)
@@ -28,6 +30,7 @@ class ControleCollections
         return somme / notes.Count;
     }
 
+    // 3.2 Moyenne, min et max
     public static void CalculMoyenneEtMention(List<double> notes)
     {
         if (notes == null || notes.Count == 0)
@@ -57,6 +60,7 @@ class ControleCollections
         Console.WriteLine($"Moyenne : {moyenne:F2}, Min : {min}, Max : {max}, Mention : {mention}");
     }
 
+    // 3.5 Filtrage par motif
     public static string Decrire(object? o)
     {
         return o switch

@@ -1,5 +1,6 @@
 namespace Ecole;
 
+// 4.1 La classe Etudiant
 public class Etudiant
 {
     private readonly List<double> _notes = new List<double>();
